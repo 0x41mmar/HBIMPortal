@@ -1,0 +1,54 @@
+.markup3D.leader-container{pointer-events:none;position:absolute;height:100%;width:100%;left:0;top:0}
+svg.markup3D{width:100%;height:100%}
+.markup3D .btn-ctrl{width:46px;height:6px;line-height:0;vertical-align:top;}
+.markup3D .btn-span{margin-right:0;line-height:.3;top:1px}
+
+#MyViewerDiv {width: 100%;height: 100%;margin: 0;background-color: #F0F8FF;border: solid 1px #000000;}
+
+.loadingBox{
+  position:absolute;
+  display:inline-block;
+  width:100px;
+  height:40px;
+  margin-top:-20px;
+  text-align:left;
+  top:20px;
+  left:500px;
+  z-index:100;
+}
+
+#loadMsg {
+  font-weight: 700;
+  padding-left:40px;
+}
+
+.loading{
+  box-sizing: border-box;
+  font-size:0;
+  width:30px;
+  height:30px;
+  margin-top:5px;
+  border-radius:15px;
+  padding:0;
+  border:3px solid #111111;
+  border-bottom:3px solid rgba(255,255,255,0.0);
+  border-left:3px solid rgba(255,255,255,0.0);
+  background-color:transparent !important;
+  animation-name: rotateAnimation;
+  -webkit-animation-name: wk-rotateAnimation;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  animation-delay: 0.2s;
+  -webkit-animation-delay: 0.2s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@keyframes rotateAnimation {
+    0%   {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+@-webkit-keyframes wk-rotateAnimation {
+    0%   {-webkit-transform: rotate(0deg);}
+    100% {-webkit-transform: rotate(360deg);}
+}

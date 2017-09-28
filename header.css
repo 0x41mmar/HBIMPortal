@@ -1,0 +1,182 @@
+html {
+      height: 100%;
+}
+
+body {
+      margin: 0;
+      margin-top: 80px;
+}
+
+.header-basic-light {
+    background: #252a3f;
+    position: absolute;
+    top: 0;
+    width: 100%;
+	
+}
+
+.divbox {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.header-basic-light{
+	padding: 20px 40px;
+	box-sizing:border-box;
+	box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.15);
+	height: 80px;
+	background-color: #fff;
+}
+.header-basic-light .header-limiter {
+	max-width: 1200px;
+	text-align: center;
+	margin: 0 auto;
+}
+/* Logo */ .header-basic-light .header-limiter h1{
+	float: left;
+	font: normal 28px Cookie, Arial, Helvetica, sans-serif;
+	line-height: 40px;
+	margin: 0;
+}
+.header-basic-light .header-limiter h1 span {
+	color: white;
+}
+/* The header links */ .header-basic-light .header-limiter a {
+	color: white;
+	text-decoration: none;
+}
+.header-basic-light .header-limiter nav{
+	font:15px Raleway, Arial, Helvetica, sans-serif;
+	line-height: 40px;
+	float: right;
+}
+.header-basic-light .header-limiter nav a{
+	display: inline-block;
+	padding: 0 5px;
+	opacity: 0.9;
+	text-decoration:none;
+	color: white;
+	line-height:1;
+}
+.header-basic-light .header-limiter nav a.selected {
+	background-color: #4693f5;
+	color: #ffffff;
+	border-radius: 3px;
+	padding:6px 10px;
+}
+
+.header-basic-light .header-limiter nav a:hover {
+	background-color: #5673a5;
+	color: #ffffff;
+	border-radius: 3px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+}
+
+/* Making the header responsive. */ @media all and (max-width: 600px) {
+	.header-basic-light {
+		padding: 20px 0;
+		height: 85px;
+	}
+	.header-basic-light .header-limiter h1 {
+		float: none;
+		margin: -8px 0 10px;
+		text-align: center;
+		font-size: 24px;
+		line-height: 1;
+	}
+	.header-basic-light .header-limiter nav {
+		line-height: 1;
+		float:none;
+	}
+	.header-basic-light .header-limiter nav a {
+		font-size: 13px;
+	}
+}
+/* For the headers to look good, be sure to reset the margin and padding of the body */ body {
+	padding:0;
+}
+
+
+
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Raleway Thin'), local('Raleway-Thin'), 
+url(https://fonts.gstatic.com/s/raleway/v9/dmAH8jAp59hEHmV0DZubgA.woff2) format('woff2'), 
+url(https://fonts.gstatic.com/s/raleway/v9/b1OWH1QXUjVxHio22EJrRQ.woff) format('woff');
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Raleway ExtraLight'), local('Raleway-ExtraLight'), 
+url(https://fonts.gstatic.com/s/raleway/v9/he68jTK1b0MMVuLPqhZADPesZW2xOQ-xsNqO47m55DA.woff2) 
+format('woff2'), 
+url(https://fonts.gstatic.com/s/raleway/v9/oDShYVLKr2BTVkQewdDISfesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Raleway Light'), local('Raleway-Light'), 
+url(https://fonts.gstatic.com/s/raleway/v9/cem5rtbF_kq3-MaxgfX9NfesZW2xOQ-xsNqO47m55DA.woff2) 
+format('woff2'), 
+url(https://fonts.gstatic.com/s/raleway/v9/1JmffU9tqSVQbX7FjPwOC_esZW2xOQ-xsNqO47m55DA.woff) format('woff');
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), url(https://fonts.gstatic.com/s/raleway/v9/t0jKe5AHP4L6EZSMZFwieg.woff2) 
+format('woff2'), url(https://fonts.gstatic.com/s/raleway/v9/fj4GB2RX6COD1Mnz53LyUA.woff) format('woff');
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Raleway Medium'), local('Raleway-Medium'), 
+url(https://fonts.gstatic.com/s/raleway/v9/YxO9f7BA07UCfQXegp5VIPesZW2xOQ-xsNqO47m55DA.woff2) 
+format('woff2'), 
+url(https://fonts.gstatic.com/s/raleway/v9/xzAo-d1GDuS5ODPAwWYuAPesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Raleway SemiBold'), local('Raleway-SemiBold'), 
+url(https://fonts.gstatic.com/s/raleway/v9/kcbbeXU4IoYea-qvPG4-5PesZW2xOQ-xsNqO47m55DA.woff2) 
+format('woff2'), 
+url(https://fonts.gstatic.com/s/raleway/v9/069MgaHTcPZqi8A_E_Ms5fesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Raleway Bold'), local('Raleway-Bold'), 
+url(https://fonts.gstatic.com/s/raleway/v9/vGvz2k-2oTS8w5mD5IuM5_esZW2xOQ-xsNqO47m55DA.woff2) 
+format('woff2'), 
+url(https://fonts.gstatic.com/s/raleway/v9/X1ufuAAvJ16cEIfooVvP8PesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Raleway ExtraBold'), local('Raleway-ExtraBold'), 
+url(https://fonts.gstatic.com/s/raleway/v9/64z86gAC0YJrVuUjQmPcjvesZW2xOQ-xsNqO47m55DA.woff2) 
+format('woff2'), 
+url(https://fonts.gstatic.com/s/raleway/v9/0s8lYwMT6ckDq8b6iiClNfesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Raleway Heavy'), local('Raleway-Heavy'), 
+url(https://fonts.gstatic.com/s/raleway/v9/io81c1khiA-sUkrxyIYV4_esZW2xOQ-xsNqO47m55DA.woff2) 
+format('woff2'), 
+url(https://fonts.gstatic.com/s/raleway/v9/M3aQkqO5PyTwV-HFYQ2gV_esZW2xOQ-xsNqO47m55DA.woff) format('woff');
+}
+h1,h2,h3,h4,h5,h6 .h1,.h2,.h3,.h4,.h5,.h6 { font-family: 'Raleway', sans-serif !important; font-weight: 700 
+!important;
+}

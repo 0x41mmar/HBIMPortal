@@ -1,0 +1,25 @@
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=no" />
+        <meta charset="utf-8">
+	<link rel="stylesheet" href="header.css" type="text/css">
+    </head>
+    <body>
+<header class="header-basic-light" style="background: #252a3f;">
+<div class="header-limiter">
+<h1><a href="/">HBIM</a></h1>
+
+		<nav>
+			<a href="index.html">Model</a>
+			<a href="archive.html">Archive</a>
+			<a href="#"  class="selected">Graphs</a>			
+		</nav>
+	</div>
+</header>
+<div class="divbox">
+<div style="height:100%;width:100%"></div>
+</div>
+</body>
+</html>
+

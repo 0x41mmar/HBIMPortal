@@ -1,0 +1,86 @@
+/* The following was provided by Guy from http://www.meteoturbie.net
+"Attached the few lines of script that allow english or french dispay depending on the value of a: $lang  var. On my side $lang is stored in a cookie that is reassigned when clicking on a language flag. Anyway that $lang var may be assigned by any other method.
+
+May be it can help someone.
+
+Kind regards.
+
+-= Guy =-
+*/
+// Optional header info
+$header     = true;                                 // true if you wish to use it
+$Courtesy   = $lang == 'fr' ? 'Script, courtoisie de Jim McMurry <a href="http://www.jcweather.us"  onclick="window.open(this.href); return false;" >jcweather</a>' : 'Script, courtesy of Jim McMurry <a href="http://www.jcweather.us" onclick="window.open(this.href); return false;" >jcweather</a>';              // Anything you wish or "" for a plain bar
+$Langtitle  = $lang == 'fr' ? 'Donn&eacute;es Historiques de M&eacute;t&eacute;o Turbie' : 'M&eacute;t&eacute;o Turbie Historical Data';              // Anything you wish or "" for a plain bar
+$LcurDay    = $lang == 'fr' ? 'Retour &agrave; aujourd\'hui' : 'Return to Current Day';              // The link back to the current day if off in one of the other modes.  "" to disable it.
+// Optional footer bar
+$footer     = true;                                 // true if you wish to have the colored footer bar at the bottom
+$LangFtext  = $lang == 'fr' ? 'Donn&eacute;es Historique de M&eacute;t&eacute;o Turbie' : 'M&eacute;t&eacute;o Turbie Historical Data';              // Anything you wish or "" for a plain bar
+// Optional content to be placed to the right of the Summary/Graph portion of the page
+$inboxfile  = "./top.htm";                          // A file of html to be placed in the right outlined box.  Make it "" if not using, or just don't have a file available.
+$outboxfile = "./bottom.htm";                       // Same but for the area below the right blue box.  Paths to the files must be relative to the calling page.
+// Optional "Return to Top" link on the right side
+$toTop      = false;                                // Most will want this, but some folks have alternative methods. 
+$LtopPg     = $lang == 'fr' ? 'Haut de page': 'Return to Top';
+// Optional selector for other PWS data
+$selOthers  = false;                                // true if you wish to show other stations, false if not 
+$otherIds   = array('KWIMAUST1', 'ISILKEBO2', 'IVLAAMSG7', 'IBOUCHES4');  // Only works for PWS - Not Airports!
+$otherLocat = array('Mauston, WI', 'Silkeborg, DK', 'Kampenhout, BE', 'Cassis, FR'); 
+// Option to not show sky conditions in the daily tabular listing
+$skipSolar  = false;                                 // true to skip solar data, false to include them
+$skipSky    = false;                                 // true to skip sky conditions, false to include them
+// Option to not show the tabular data
+$skipTab    = false;                                // true if you wish to suppress the tabular data
+// Language changes follow.  If unsure about any of them, try it and see what happens.
+if ($lang == 'fr') { 
+$mnthname     = array('Nil', 'Janvier', 'F&eacute;vrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Ao&ucirc;ut', 'Septembre', 'Octobre', 'Novembre', 'D&eacute;cembre'); }
+else {
+$mnthname     = array('Nil', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'); }
+              // Next are for the Summary Table
+if ($lang == 'fr') {
+$Langtabs     = array('Journalier', 'Hebdomadaire', 'Mensuel ', 'Annuel', 'Sur mesure'); }
+else { 
+$Langtabs     = array('Daily', 'Weekly', 'Monthly', 'Yearly', 'Custom'); } // Tabs above the Summary Table
+if ($lang == 'fr') { 
+$LangSumHeads = array("Temp&eacute;rature", "Point de ros&eacute;e", "Humidit&eacute;", "Vent", "Rafales", "Vent", "Pression", "Pluie", "Solaire");}
+else {
+$LangSumHeads = array("Temperature", "Dew Point", "Humidity", "Wind Speed", "Wind Gust", "Wind", "Pressure", "Precipitation", "Solar"); }
+              // Headings for the Summary Table
+if ($lang == 'fr') {
+$LangSumCols  =array("Actuel", "Max", "Min", "Moyenne"); }
+else {
+$LangSumCols  = array("Current", "High", "Low", "Average"); }
+$LSumfor   = $lang == 'fr' ? "Rapport pour" : "Summary for";
+$Lunits    = $lang == 'fr' ? "Unit&eacute;e" : "Units";
+$Lboth     = $lang == 'fr' ? "Les deux" : "Both";
+$Lenglish  = $lang == 'fr' ? "Imp&eacute;riale" : "English";
+$Lmetric   = $lang == 'fr' ? "M&eacute;trique" : "Metric";
+$Lnext     = $lang == 'fr' ? "Suivant" : "Next";
+$Lprev     = $lang == 'fr' ? "Pr&eacute;c&eacute;dent" : "Previous";
+if ($lang == 'fr') { 
+$Ltarget   = array("Jour", "Semaine", "Mois", "Ann&eacute;e"); }
+else {
+$Ltarget   = array("Day", "Week", "Month", "Year"); }
+$Lview     = $lang == 'fr' ? "Voir" : "View";
+$Ltab1     = $lang == 'fr' ? "Donn&eacute;es tabulaires pour" : "Tabular Data for";  // Next 5 for Blue bar above the Tabular listing
+$Ltab2     = $lang == 'fr' ? "Donn&eacute;es tabulaires h&eacute;bdomadaires" : "Weeks Tabular Data";
+$Ltab3     = $lang == 'fr' ? "Donn&eacute;es tabulaires mensuelles" : "Months Tabular Data";
+$Ltab4     = $lang == 'fr' ? "Donn&eacute;es tabulaires annuelles" : "Years Tabular Data";
+$Ltab5     = $lang == 'fr' ? "Donn&eacute;es tabulaires sur mesure" : "Custom Date Range Tabular Data";
+          // Next are for the Tabular Table
+if ($lang == 'fr') {
+$Lheadings = array('Heure', 'Temp&eacute;rature', 'Point de ros&eacute;e', 'Pression', 'Vent', 'Vent', 'Rafales', 'Humidit&eacute;', 'Pluie Taux (Horaire)', 'solaire', 'Conditions'); }
+else {
+$Lheadings = array('Time', 'Temperature', 'Dew Point', 'Pressure', 'Wind', 'Wind Speed', 'Wind Gust', 'Humidity', 'Rainfall Rate (Hourly)', 'solar', 'Conditions'); }
+          // Headings when in weekly, monthly etc modes
+if ($lang == 'fr') {
+$Lhdngs2   = array("Temp", "Point de ros&eacute;e", "Humidit&eacute;", "Pression niveau mer", "Vent", "Rafales", "Pluie"); }
+else {
+$Lhdngs2   = array("Temp", "Dew Point", "Humidity", "Sea Level Pressure", "Wind", "Gust Speed", "Precip"); }
+if ($lang == 'fr') {
+$Lcols2    = array("max", "moy", "min", "tot"); }
+else {
+$Lcols2    = array("high", "ave", "low", "sum"); }
+$Lcommafile= $lang == 'fr' ? "Fichier d&eacute;limit&eacute; par virgules" : "Comma Delimited File";
+$Lthanks   = $lang == 'fr' ? "Courtoisie de" : "Compliments of";
+//
+// end of settings
