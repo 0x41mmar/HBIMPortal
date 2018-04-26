@@ -1,0 +1,80 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=no" />
+    <meta charset="utf-8">
+	
+    <!-- Stylesheet Libraries -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"> -->
+	<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+	
+	<!-- JS libraries -->
+	<!-- <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script> -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script> -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	
+	
+	<!-- Viewer CSS --> <!-- https://developer.api.autodesk.com/viewingservice/v1/viewers/ -->
+	<link rel="stylesheet" href="https://developer.api.autodesk.com/modelderivative/v2/viewers/style.min.css?v=3.3" type="text/css">
+		
+	<!-- Viewer JS -->
+	<script src="https://developer.api.autodesk.com/modelderivative/v2/viewers/three.min.js?v=3.3"></script> 
+	<script src="https://developer.api.autodesk.com/modelderivative/v2/viewers/viewer3D.min.js?v=3.3"></script>
+	
+	
+	<!-- my stylesheets -->
+	<link rel="stylesheet" href="model.css" type="text/css">
+	<link rel="stylesheet" href="header.css" type="text/css">
+		
+	
+	<!-- Extensions JS -->
+	<script src="app/polyfill.min.js"></script>
+	<script src="app/Viewing.Extension.Markup3D.min.js"></script>
+	<script src="app/Viewing.Extension.StateManager.min.js"></script>
+	<script src="app/Viewing.Extension.MetaProperties.js"></script>
+	<script src="app/Viewing.Extension.HeritageEditor.js"></script>
+	
+	<!-- Developer JS - Function Definitions -->
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="web.js"></script>
+	
+	<!-- Developer JS - Run things -->
+	<script type="text/javascript" src="content.js"></script>
+	<script type="text/javascript" src="run.js"></script>
+	
+</head>
+<body>
+   <header class="header-basic-light" style="background: #252a3f;">
+    	<div class="header-limiter">
+    		<h1><a href="/">HBIM</a></h1>
+    		<nav>
+    			<a href="/" class="selected">Model</a>
+    			<a href="archive.html">Archive</a>
+    			<a href="graphs.php">Graphs</a>
+    		</nav>
+    	</div>
+    </header>
+<div class="wrapper">
+
+      <div id="navPanel"><iframe src="heritage2.html" name="report" width="100%" height="100%"></iframe></div>
+	  
+	  
+        <!-- page content  -->
+		<div class="divbox">
+			<div class="loadingBox" style="width:300px; padding-top: 30px">
+			<span id="loadMsg"></span>
+			<div class="loadingBox" id="loadDiv" style="left:0px">
+				<div class="fal"></div>
+				</div>
+			</div>
+			<div id="viewerDiv"><div id="root"></div></div>
+		</div>
+      </div>
+
+</div>
+
+</body>
+</html>

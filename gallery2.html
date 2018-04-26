@@ -1,11 +1,7 @@
 
 <!DOCTYPE html><html class=''>
-<head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.2.0/min/dropzone.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.2.0/min/dropzone.min.css" type="text/css">
-<style>
-#filetypelist {display: none; column-count: 5; border: solid; margin: 0px 10px 0px 10px; padding: 10px 0px 10px 0px; background: rgba(256,256,256,0.8);}
-</style>
+<head><script src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/css_live_reload_init-2c0dc5167d60a5af3ee189d570b1835129687ea2a61bee3513dee3a50c115a77.js'></script><meta charset='UTF-8'><meta name="robots" content="noindex"><link rel="shortcut icon" type="image/x-icon" href="//production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" /><link rel="mask-icon" type="" href="//production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" /><link rel="canonical" href="https://codepen.io/ebrewe/pen/QKpbBz?depth=everything&limit=all&order=popularity&page=12&q=portfolio&show_forks=false" />
+
 <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
 <link rel="stylesheet" href="header.css" type="text/css">
 <style class="cp-pen-styles">@import "https://fonts.googleapis.com/css?family=Fira+Sans:300,400";
@@ -190,44 +186,29 @@ body {
 
 <div class="container" style="margin-top:150px"> 
 <div class="row">
-<p style="display: none; padding-left: 10px">
-<button type="submit" class="btn btn-primary start" style="display: none" onClick="javascript:document.getElementById('model_upload').click()">
+<p style="padding-left: 10px"><button type="submit" class="btn btn-primary start" onClick="javascript:document.getElementById('model_upload').click()">
                     <i class="glyphicon glyphicon-upload"></i>
                     <span>Upload a new model</span>
 </button>
-<input id="model_upload" type="file" accept=".RVT,.3DM,.3DS,.ASM,.CATPART,.CATPRODUCT,.CGR,.COLLABORATION,.DAE,.DDX,.DDZ,.DGK,.DGN (3D only),.DLV3,.DMT,.DWF,.DWFX,.DWG *,.DWT,.DXF,.EMODEL,.EXP,.F3D,.FBX,.G,.GBXML,.GLB,.GLTF,.IAM,.IDW,.IFC,.IGE,.IGES,.IGS,.IPT,.IWM,.JT,.MAX,.MODEL,.NEU,.NWC,.NWD,.OBJ,.PMLPRJ,.PMLPRJZ,.PRT,.PSMODEL,.SAB,.SAT,.SESSION,.SKP,.SLDASM,.SLDPRT,.SMB,.SMT,.STE,.STEP,.STL,.STLA,.STLB,.STP,.STPZ,.VUE,.WIRE,.X_B,.X_T,.XAS,.XPR" style="display:none"/>
-<form action="http://localhost:8080/create" class="dropzone dz-clickable" id="mainDropzone" style="display:none; width: 1150px; margin: 0 auto;"><div class="dz-default dz-message"><span style="font-weight: 200;font-size: 29px;">Drop files here to upload</span><br><a href="#"> <span id="detailsLink">Most 3D filetypes supported</span></a><br><span>including DWG, BIM, RVT, IFC, and NWD.</span><br><span id="filetypes"></span></div></form>
-</p>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.min.js'></script><script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.min.js'></script>
-<script type="text/javascript" src="content.js"></script>
+<input id="model_upload" type="file" accept=",.3DM,.3DS,.ASM,.CATPART,.CATPRODUCT,.CGR,.COLLABORATION,.DAE,.DDX,.DDZ,.DGK,.DGN (3D only),.DLV3,.DMT,.DWF,.DWFX,.DWG *,.DWT,.DXF,.EMODEL,.EXP,.F3D,.FBX,.G,.GBXML,.GLB,.GLTF,.IAM,.IDW,.IFC,.IGE,.IGES,.IGS,.IPT,.IWM,.JT,.MAX,.MODEL,.NEU,.NWC,.NWD,.OBJ,.PMLPRJ,.PMLPRJZ,.PRT,.PSMODEL,.SAB,.SAT,.SESSION,.SKP,.SLDASM,.SLDPRT,.SMB,.SMT,.STE,.STEP,.STL,.STLA,.STLB,.STP,.STPZ,.VUE,.WIRE,.X_B,.X_T,.XAS,.XPR" style="display:none"/>
 <script>
-//Dropzone.options.mainDropzone = {paramName: "file", maxFilesize: 200}
 var d = document.getElementById('model_upload')
 d.addEventListener('input', function() {
 items.push({name: d.files[0].name, image:'./thumbs/loadingL.gif'});
-setTimeout(function() {
-items[items.length-1]=items[0]; //set the docId and image equal to first model (Joule House)
-ReactDOM.render(React.createElement(Gallery, null), document.getElementById('portfolio'));
-}, 6000);
 ReactDOM.render(React.createElement(Gallery, null), document.getElementById('portfolio'));
 });
-document.getElementById('detailsLink').onclick = function(e) {e.stopPropagation(); document.getElementById('filetypelist').style.display = 'block'}
+
 </script>
-
-
-<div id="filetypelist">
-<ul> <li> 3DM</li> <li> 3DS</li> <li> ASM</li> <li> CATPART</li> <li> CATPRODUCT</li> <li> CGR</li> <li> COLLABORATION</li> <li> DAE</li> <li> DDX</li> <li> DDZ</li> <li> DGK</li> <li> DGN    (3D only) 
-</li> <li> DLV3</li> <li> DMT</li> <li> DWF</li> <li> DWFX</li> <li> DWG </li> <li> DWT</li> <li> DXF</li> <li> EMODEL</li> <li> EXP</li> <li> F3D</li> <li> FBX</li> <li> G</li> <li> GBXML</li> <li> GLB</li> <li> GLTF</li> <li> IAM</li> <li> IDW</li> <li> IFC</li> <li> IGE</li> <li> IGES</li> <li> IGS</li> <li> IPT</li> <li> IWM</li> <li> JT</li> <li> MAX</li> <li> MODEL</li> <li> NEU</li> <li> NWC</li> <li> NWD</li> <li> OBJ</li> <li> PMLPRJ</li> <li> PMLPRJZ</li> <li> PRT</li> <li> PSMODEL</li> <li> RVT   **  
-</li> <li> SAB</li> <li> SAT</li> <li> SESSION</li> <li> SKP</li> <li> SLDASM</li> <li> SLDPRT</li> <li> SMB</li> <li> SMT</li> <li> STE</li> <li> STEP</li> <li> STL</li> <li> STLA</li> <li> STLB</li> <li> STP</li> <li> STPZ</li> <li> VUE</li> <li> WIRE</li> <li> X_B</li> <li> X_T</li> <li> XAS</li> <li> XPR</li>
-</ul>
-</div>
+</p>
   <div id="portfolio"></div>
 </div>
 </div>
+<script type="text/javascript" src="content.js"></script>
+<script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script><script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.min.js'></script><script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.min.js'></script>
 <script >'use strict';
 
 //var items = [{ name: 'Bangkok', image: 'http://ericbrewer.ca/images/stockImages/Bangkok.jpg?dl=1' }, { name: 'Forest', image: 'http://ericbrewer.ca/images/stockImages/ForestJog.jpg?dl=1' }, { name: 'London', image: 'http://ericbrewer.ca/images/stockImages/londonStation.jpg?dl=1' }, { name: 'River', image: 'http://ericbrewer.ca/images/stockImages/mistRiver.jpg?dl=1' }, { name: 'New York', image: 'http://ericbrewer.ca/images/stockImages/newYork.jpg?dl=1' }, { name: 'Drive', image: 'http://ericbrewer.ca/images/stockImages/SSD.jpg?dl=1' }, { name: 'Field', image: 'http://ericbrewer.ca/images/stockImages/wheatField.jpg?dl=1' }];
-var items = viewModels.slice(0,5);
+var items = viewModels;
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -279,11 +260,11 @@ var Gallery = function (_Component) {
   Gallery.prototype.renderGallery = function renderGallery() {
     var _this3 = this;
 
-    return this.items.map(function (item, index) {
+    return this.items.map(function (item) {
       var activeClass = _this3.state.cardActive ? 'active' : ''; //this.state.activeItem == item.name ? 'active' : '';
       return React.createElement(
         GalleryItem,
-        { name: item.name, background: item.image, documentId: index/*item.documentId*/, active: activeClass, clickFunction: _this3.handleItemClick.bind(_this3) },
+        { name: item.name, background: item.image, link: item.link, active: activeClass, clickFunction: _this3.handleItemClick.bind(_this3) },
         React.createElement(
           'h2',
           null,
@@ -323,11 +304,10 @@ var GalleryItem = function (_Component2) {
   }
 
   GalleryItem.prototype.handleClick = function handleClick(e) {
-    //e.preventDefault();
-    //this.props.clickFunction(this.props.name, this.refs.el);
+    e.preventDefault();
+    this.props.clickFunction(this.props.name, this.refs.el);
+	window.location.replace(this.props.link)
 	console.log(this)
-	window.location.replace('./model.html?docID='+this.props.documentId);
-	
   };
 
   GalleryItem.prototype.render = function render() {
@@ -384,7 +364,7 @@ var Card = function (_Component3) {
       React.createElement(
         'p',
         null,
-        'A building that was added through the model uploader.'
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus placerat vitae mi ut lobortis. In vehicula, risus eu rhoncus ornare, augue mauris volutpat justo, ut pellentesque libero turpis quis leo. Nam id porttitor enim, eget tempor arcu. Nulla blandit accumsan tellus in tristique. Praesent pellentesque quis nisi sit amet accumsan. Cras quam dui, pulvinar eget finibus eget, tincidunt in nisl. Vestibulum vulputate fringilla odio, eu porta mi porta ut. Cras fermentum porttitor mi, vel dignissim dui egestas sed. Pellentesque sapien nunc, commodo ut libero at, molestie venenatis urna. Fusce commodo enim magna, ac efficitur arcu dictum in.'
       )
     );
   };
@@ -393,6 +373,6 @@ var Card = function (_Component3) {
 }(Component);
 
 ReactDOM.render(React.createElement(Gallery, null), document.getElementById('portfolio'));
-
+//# sourceURL=pen.js
 </script>
 </body></html>

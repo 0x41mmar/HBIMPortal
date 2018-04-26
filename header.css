@@ -15,11 +15,6 @@ body {
 	
 }
 
-.divbox {
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-}
 .header-basic-light{
 	padding: 20px 40px;
 	box-sizing:border-box;
@@ -49,6 +44,8 @@ body {
 	font:15px Raleway, Arial, Helvetica, sans-serif;
 	line-height: 40px;
 	float: right;
+	width: auto;
+	background-color: inherit;
 }
 .header-basic-light .header-limiter nav a{
 	display: inline-block;

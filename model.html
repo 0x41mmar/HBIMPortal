@@ -1,0 +1,204 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=no" />
+    <meta charset="utf-8">
+	
+    <!-- Stylesheet Libraries -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"> -->
+	<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+	
+	<!-- JS libraries -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.1.0/webcomponents-hi.js"></script>
+	
+	
+	
+	<!-- Viewer CSS --> <!-- https://developer.api.autodesk.com/viewingservice/v1/viewers/ -->
+	<link rel="stylesheet" href="https://developer.api.autodesk.com/modelderivative/v2/viewers/style.min.css?v=3.3" type="text/css">
+		
+	<!-- Viewer JS -->
+	<script src="https://developer.api.autodesk.com/modelderivative/v2/viewers/three.min.js?v=3.3"></script> 
+	<script src="https://developer.api.autodesk.com/modelderivative/v2/viewers/viewer3D.min.js?v=3.3"></script>
+	
+	
+	<!-- my stylesheets -->
+	<link rel="stylesheet" href="model.css" type="text/css">
+	<link rel="stylesheet" href="navbar.css" type="text/css">
+	<link rel="stylesheet" href="timeline.css" type="text/css">
+	<link rel="stylesheet" href="header.css" type="text/css">
+		
+	
+	<!-- Extensions JS -->
+	<script src="app/polyfill.min.js"></script>
+	<script src="app/Viewing.Extension.Markup3D.js"></script>
+	<script src="app/Viewing.Extension.StateManager.js"></script>
+	<script src="app/Viewing.Extension.MetaProperties.js"></script>
+	<script src="app/Viewing.Extension.HeritageEditor.js"></script>
+	<!-- <script src="app/Autodesk.ADN.Viewing.Extension.DockingPanel.min.js"></script> -->
+	
+	<!-- Developer JS - Function Definitions -->
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="web.js"></script>
+	
+	<!-- Developer JS - Run things -->
+	<script type="text/javascript" src="content.js"></script>
+	<script type="text/javascript" src="run.js"></script>
+
+</head>
+<body>
+   <header class="header-basic-light" style="background: #252a3f;">
+    	<div class="header-limiter">
+    		<h1><a href="/">HBIM</a></h1>
+    		<nav>
+    			<a href="/" class="selected">Model</a>
+    			<a href="archive.html">Archive</a>
+    			<a href="graphs.php">Graphs</a>
+    		</nav>
+    	</div>
+    </header>
+<div class="wrapper">
+<div class="nav-side-menu">
+    <div class="brand"><a id="toggle"><span class="fa fa-bars fa-3x" style="line-height: 80px;"></span></a></div>
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+  
+        <div class="menu-list">
+  
+            <ul id="menu-content" class="menu-content collapse out">
+                <li>
+                  <a href="index.html">
+                  <i class="fa fa-home fa-lg"></i> Home
+                  </a>
+                </li>
+
+				<li  data-toggle="collapse" data-target="#models" class="collapsed">
+                  <a href="#"><i class="fa  fa-codepen fa-lg"></i> Buildings <span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="models">
+                    <!-- <li><a href="model.html?docID=0">Joule House</a></li> -->
+                </ul>
+				
+				<li component="component_timeline">
+                  <a href="#">
+                  <i class="fa fa-clock-o fa-lg"></i> Timeline
+                  </a>
+                </li>
+				
+                <li  data-toggle="collapse" data-target="#reports" class="collapsed">
+                  <a href="#"><i class="fa fa-sticky-note fa-lg"></i> Archival Reports <span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="reports">
+                    <!-- <li class="active"><a href="#">CSS3 Animation</a></li> -->
+                    <!-- <li><a href="#">Listing</a></li> -->
+                </ul>
+				
+				<li  data-toggle="collapse" data-target="#measurements" class="collapsed">
+                  <a href="#"><i class="fa fa-bar-chart fa-lg"></i> Measurement Reports <span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="measurements">
+                </ul>
+
+                <li data-toggle="collapse" data-target="#analysis" class="collapsed">
+                  <a href="#"><i class="fa  fa-connectdevelop fa-lg"></i> Analysis Reports<span class="arrow"></span></a>
+                </li>  
+                <ul class="sub-menu collapse" id="analysis">
+                  <!-- <li>Internal Comfort<a href="#"><span style="float: right;padding: 10px;" class="fa fa-gear fa-lg"></span></a></li> -->
+                </ul>
+
+
+                <li data-toggle="collapse" data-target="#views" class="collapsed" style="display:none">
+                  <a href="#"><i class="fa  fa-street-view fa-lg"></i> Views <span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="views">
+                  <li>HBIM</li>
+                  <li>Point Cloud</li>
+                </ul>
+				
+				<li component="component_realtime" style="display:none">
+                  <a href="#">
+                  <i class="fa fa-area-chart fa-lg"></i> Real-time Data View
+                  </a>
+                </li>
+				
+				<li component="component_reportCreator">
+                  <a href="#">
+                  <i class="fa fa-plus-circle fa-lg"></i> Report Creator
+                  </a>
+                  </li>
+				  
+				  <li component="component_configuration">
+                  <a href="#" >
+                  <i class="fa fa-cog fa-lg"></i> Configuration
+                  </a>
+                  </li>
+				
+				<li component="component_sensors">
+                  <a href="#">
+                  <i class="fa fa-server fa-lg"></i> Data Sources
+                  </a>
+                  </li>
+				
+                 <li>
+                  <a href="#">
+                  <i class="fa fa-file-code-o fa-lg"></i> Export
+                  </a>
+                  </li>
+
+                 <li>
+                  <a href="http://www.hbim.org" target="_blank">
+                  <i class="fa fa-info fa-lg"></i> About
+                  </a>
+                </li>
+            </ul>
+     </div>
+</div>
+
+<div id="components" style="display:none">
+<div id="component_reports">
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#document">Document</a></li>
+  <li><a data-toggle="tab" href="#images">Images</a></li>
+  <li><a data-toggle="tab" href="#properties">Properties</a></li>
+</ul>
+<div class="tab-content">
+  <div id="document" class="tab-pane fade in active">
+    <iframe id="reportDoc" src="heritage2.html" name="report" width="100%" height="100%"></iframe>
+  </div>
+  <div id="images" class="tab-pane fade">
+    <iframe id="imagesDoc" src="" name="report2" width="100%" height="100%"></iframe>
+  </div>
+  <div id="properties" class="tab-pane fade">
+	<h3> BIM Properties </h3>
+    <p>Some content in menu 2.</p>
+  </div>
+</div>
+</div>
+<div id="component_timeline">
+<div class="timeline"><div class="line text-muted"></div></div>
+<p id="timelineTools" style="display: none">
+<button type="submit" style="margin: 0px 10px 0px 30px;" class="btn btn-primary start"><i class="glyphicon glyphicon-upload"></i><span> Upload new model or point cloud</span></button>
+<button type="submit" style="margin: 10px 10px 10px 30px;" class="btn btn-success start"><i class="glyphicon glyphicon-pencil"></i><span> Edit timeline</span></button><p></div>
+<div id="component_configuration"><h2>Configuration</h2></div>
+<div id="component_reportCreator" style="display: flex; background: whitesmoke;">
+
+</div>
+<div id="component_sensors"><h2>Data Sources</h2></div>
+</div>
+
+<div id="navPanel">
+
+</div>
+    <!-- <div id="navPanel"><iframe src="heritage2.html" name="report" width="100%" height="100%"></iframe></div> -->
+	<!-- page content  -->
+<div class="divbox">
+		<div class="loadingBox" style="width:300px; padding-top: 30px">
+			<span id="loadMsg"></span><div class="loadingBox" id="loadDiv" style="left:0px"><div class="fal"></div></div>
+		</div>
+		<div id="viewerDiv"><div id="root"></div></div>
+	</div>
+</div>    
+</body>
+</html>

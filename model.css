@@ -1,10 +1,48 @@
+body {
+	overflow: hidden;
+}
+
+
+#navPanel {width: 35%; height: 100%; float: left; position: relative; z-index: 2; background-color: #2e353d; display:none; }
+.nav-tabs li a {font-family: verdana; color: #e1ffff; z-index: 2}
+.nav-tabs {border: none; height:40px; margin-left: 10px}
+
+.tab-content {height: calc(100% - 40px);}/*offset caused by tabs height*/
+#reportDoc {border: none;} /*iframe*/
+
+#fig_el131042768179608115985515 {background-color: whitesmoke;}
+#fig_el13104276818520993017156 {background-color: whitesmoke;}
+#fig_el131043177456405788319224 {background-color: whitesmoke;}
+
+#component_timeline {overflow-y: scroll; height: 100%;}
+
+#viewerDiv {width: 100%;height: 100%;margin: 0;background-color: #F0F8FF;}
+.divbox {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
 .markup3D.leader-container{pointer-events:none;position:absolute;height:100%;width:100%;left:0;top:0}
 svg.markup3D{width:100%;height:100%}
 .markup3D .btn-ctrl{width:46px;height:6px;line-height:0;vertical-align:top;}
 .markup3D .btn-span{margin-right:0;line-height:.3;top:1px}
+.markup3d-comment {
+background: rgba(120,120,120,0.3);
+padding: 5px;
+border-radius: 10px 10px 10px 10px;
+overflow: hidden;}
 
-#MyViewerDiv {width: 100%;height: 100%;margin: 0;background-color: #F0F8FF;border: solid 1px #000000;}
-
+.glyphicon-list {
+	font-size:24px;
+}
+.my-view-front-button {
+    background: red;
+}
+.my-view-back-button {
+    background: blue;
+}
+  
 .loadingBox{
   position:absolute;
   display:inline-block;
@@ -12,8 +50,8 @@ svg.markup3D{width:100%;height:100%}
   height:40px;
   margin-top:-20px;
   text-align:left;
-  top:20px;
-  left:500px;
+  top:45px;
+  left:460px;
   z-index:100;
 }
 
