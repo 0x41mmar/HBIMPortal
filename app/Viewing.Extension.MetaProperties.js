@@ -131,15 +131,18 @@ Autodesk.Viewing.Extension.MetaProperties = function (viewer, options) {
         parent = this.tree.getElementForNode({name: metaProperty.category});
 
         if (!parent) {
+		
           parent = this.tree.createElement_({
               name: metaProperty.category,
               type: 'category'},
             this.tree.myRootContainer, options && options.localizeCategory ? {localize: true} : null);
+			parent.style.background = catColorMap[metaProperty.category]
         }
 
       } else {
 
         parent = this.tree.myRootContainer;
+		parent.style.background = catColorMap[metaProperty.category]
       }
 
       this.tree.createElement_(
@@ -179,7 +182,7 @@ Autodesk.Viewing.Extension.MetaProperties = function (viewer, options) {
 	  for (var p in storedProps) {
 		  _panel.addMetaProperty(storedProps[p]);
 	  }
-	  
+	  /*
       var textProp = {
         name: 'Significance',
         value: "This wall witnessed the Great Fire of Cairo in 166BC",
@@ -215,7 +218,7 @@ Autodesk.Viewing.Extension.MetaProperties = function (viewer, options) {
       _panel.addMetaProperty(textProp);
       _panel.addMetaProperty(linkProp);
       _panel.addMetaProperty(fileProp);
-      _panel.addMetaProperty(imgProp);
+      _panel.addMetaProperty(imgProp); */
     };
 
     /////////////////////////////////////////////////////////////////
@@ -378,7 +381,7 @@ Autodesk.Viewing.Extension.MetaProperties = function (viewer, options) {
 
         // opens link in new tab
         case 'link':
-          window.open(property.href, '_blank');
+          //window.open(property.href, '_blank');
           break;
 
         // download image or file

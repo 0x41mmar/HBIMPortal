@@ -198,7 +198,7 @@ Autodesk.ADN.Viewing.Extension.HeritageEditor = function (viewer, options) {
     this.container.style.left = "0px";
 
     this.container.style.width = "380px";
-    this.container.style.height = "400px";
+    this.container.style.height = "545px";
 
     this.container.style.resize = "auto";
 	
@@ -207,20 +207,84 @@ Autodesk.ADN.Viewing.Extension.HeritageEditor = function (viewer, options) {
         '<div class="heritageeditor-panel-controls-container">',
 		'<div style="color: white;font-size: 16;" class=""><span>Node: </span><span id="HE_nodeId">' + nodeSelected + '</span></div>',
           '<div>',
-            '<button class="btn btn-info" id="' + baseId + 'addBtn">',
+		  '<div class="dropdown"><button type="button" data-toggle="dropdown" aria-expanded="false" class="btn btn-primary dropdown-toggle" style="width: 85%;margin: 10px;">',
+		  'Property Category',
+		  '<span class="caret"></span></button><ul id="itemCategory" class="dropdown-menu" style="width: 100%;">',
+		  
+		  '<li class="inputCat1"><a href="#">Historical Significance</a></li>',
+		  '<li class="inputCat2"><a href="#">Transformation over Time</a></li>',
+		  '<li class="inputCat3"><a href="#">Interpretation</a></li>',
+		  '<li class="inputCat4"><a href="#">Preservation</a></li>',
+		  
+		  '</ul></div>',
+		  
+		  '<div class="dropdown"><button type="button" data-toggle="dropdown" aria-expanded="false" class="btn btn-info dropdown-toggle" style="width: 85%;margin: 10px;">',
+		  'Property Name',
+		  '<span class="caret"></span></button><ul id="itemName" class="dropdown-menu" style="width: 100%;">',
+		  '<li class="inputCat1"><a href="#">Significance</a></li>',
+			'<li class="inputCat1"><a href="#">Planning</a></li>',
+			'<li class="inputCat1"><a href="#">List entry Description</a></li>',
+			'<li class="inputCat1"><a href="#">List entry Number</a></li>',
+			'<li class="inputCat1"><a href="#">Date first listed</a></li>',
+			'<li class="inputCat1"><a href="#">Date of most recent amendment</a></li>',
+			'<li class="inputCat1"><a href="#">Grade</a></li>',
+			'<li class="inputCat1"><a href="#">Legacy System</a></li>',
+			'<li class="inputCat1"><a href="#">UID</a></li>',
+			'<li class="inputCat1"><a href="#">Boundary authority</a></li>',
+			'<li class="inputCat1"><a href="#">Asset Grouping</a></li>',
+			'<li class="inputCat1"><a href="#">Reasons for Designation</a></li>',
+			'<li class="inputCat1"><a href="#">History</a></li>',
+			'<li class="inputCat1"><a href="#">Details</a></li>',
+			'<li class="inputCat1"><a href="#">Listing NGR</a></li>',
+			'<li class="inputCat1"><a href="#">Selected Sources</a></li>',
+			'<li class="inputCat1"><a href="#">Information Page</a></li>',
+			'<li class="inputCat1"><a href="#">Specification Report</a></li>',
+			'<li class="inputCat1"><a href="#">Interesting Marks</a></li>',
+		  '<li class="inputCat2"><a href="#">Phase I</a></li>',
+'<li class="inputCat2"><a href="#">Phase II</a></li>',
+'<li class="inputCat2"><a href="#">Phase III</a></li>',
+'<li class="inputCat2"><a href="#">Owner I</a></li>',
+'<li class="inputCat2"><a href="#">Owner II</a></li>',
+'<li class="inputCat2"><a href="#">Owner III</a></li>',
+'<li class="inputCat3"><a href="#">Identity</a></li>',
+'<li class="inputCat3"><a href="#">Value</a></li>',
+'<li class="inputCat3"><a href="#">Traditions</a></li>',
+'<li class="inputCat3"><a href="#">Architectural value</a></li>',
+'<li class="inputCat3"><a href="#">Technological value</a></li>',
+'<li class="inputCat3"><a href="#">Social value</a></li>',
+'<li class="inputCat3"><a href="#">Archival documentation</a></li>',
+'<li class="inputCat4"><a href="#">Material</a></li>',
+'<li class="inputCat4"><a href="#">Maintenance</a></li>',
+'<li class="inputCat4"><a href="#">Restoration techniques</a></li>',
+'<li class="inputCat4"><a href="#">State of conservation</a></li>',
+'<li class="inputCat4"><a href="#">Major type of decay</a></li>',
+'<li class="inputCat4"><a href="#">Cause of decay</a></li>',
+		  '</ul></div>',
+		  
+		  '<div class="dropdown"><button type="button" data-toggle="dropdown" aria-expanded="false" class="btn btn-danger dropdown-toggle" style="width: 85%;margin: 10px;">',
+		  'Data Type',
+		  '<span class="caret"></span></button><ul id="itemDataType" class="dropdown-menu" style="width: 100%;">',
+		  
+		  '<li style=""><a href="#">text</a></li>',
+		  '<li style=""><a href="#">img</a></li>',
+		  '<li style=""><a href="#">link</a></li>',
+		  
+		  '</ul></div>',
+			
+			'<input class="heritageeditor-panel-input" type="text" placeholder=" Property Name " id="' + baseId + 'itemName">',
+			'<input class="heritageeditor-panel-input" type="text" placeholder=" Category " id="' + baseId + 'itemCategory">',
+			'<input class="heritageeditor-panel-input" type="text" placeholder=" dataType (text, img, link)" id="' + baseId + 'itemDataType">',
+			'<input class="heritageeditor-panel-input" type="text" placeholder=" Value" id="' + baseId + 'itemValue">',
+			'<button class="btn btn-info" id="' + baseId + 'addBtn" style="display: block; margin: 10px auto;">',
               '<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Item',
             '</button><br />',
-            '<input class="heritageeditor-panel-input" type="text" placeholder=" Property Name " id="' + baseId + 'itemName">',
-			'<input class="heritageeditor-panel-input" type="text" placeholder=" Category " id="' + baseId + 'itemCategory">',
-			'<input class="heritageeditor-panel-input" type="text" placeholder=" dataType (text\img\link)" id="' + baseId + 'itemDataType">',
-			'<input class="heritageeditor-panel-input" type="text" placeholder=" Value (URL if link)" id="' + baseId + 'itemValue">',
           '</div>',
           '<br>',
-          /*'<div>',
+          '<div>',
             '<button class="btn btn-info" id="' + baseId + 'clearBtn">',
               '<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> <label> Clear  </label>',
             '</button>',
-          '</div>',*/
+          '</div>',
         '</div>',
         '<div id="' + baseId + 'PanelContainerId" class="list-group heritageeditor-panel-list-container">',
         '</div>',
@@ -228,7 +292,11 @@ Autodesk.ADN.Viewing.Extension.HeritageEditor = function (viewer, options) {
     ].join('\n');
 
     $('#' + baseId + 'PanelContentId').html(html);
-	
+	$('.dropdown-menu>li').each(function(i,item) {
+		$(item).click(function() {
+			$('#' + baseId + item.parentElement.id).val(item.innerText);
+		})
+	})
 	// Add buttons for existing events
 	if (nodeSelected in objProps) {
 		for (var p in objProps[nodeSelected]) {
@@ -346,7 +414,11 @@ Autodesk.ADN.Viewing.Extension.HeritageEditor = function (viewer, options) {
   };
 
   var css = [
-
+	'li.inputCat1 {background:rgba(91,155,213,0.8)}',
+	'li.inputCat2 {background:rgba(191,144,0,0.8)}',
+	'li.inputCat3 {background:rgba(169,209,142,0.8)}',
+	'li.inputCat4 {background:rgba(255,102,0,0.8)}',
+	'#itemName.dropdown-menu {overflow-y:scroll; height: 200px}',
     'div.heritageeditor-panel-content {',
       'height: calc(100% - 60px);',
     '}',
@@ -384,7 +456,8 @@ Autodesk.ADN.Viewing.Extension.HeritageEditor = function (viewer, options) {
 
     'input.heritageeditor-panel-input {',
       'height: 30px;',
-      'width: 60%;',
+      'width: 90%;',
+	  'margin: 10px;',
       'border-radius: 5px;',
     '}'
 
@@ -401,7 +474,7 @@ Autodesk.ADN.Viewing.Extension.HeritageEditor.prototype.constructor =
 
   
 Autodesk.ADN.Viewing.Extension.HeritageEditor.prototype.onSelectionChanged = 
-function() {console.log('HE knows selection changed')};
+function() {console.log('HE selection changed handler fired')};
 
 Autodesk.Viewing.theExtensionManager.registerExtension(
   'Autodesk.Viewing.Extension.HeritageEditor',
